@@ -30,7 +30,7 @@ const router = express.Router()
 // INDEX
 // GET /examples
 router.get('/animes', requireToken, (req, res, next) => {
-  Anime.find()
+  Anime.find({ owner: req.user.id })
     .populate('owner')
     .then(animes => {
       // `examples` will be an array of Mongoose documents
