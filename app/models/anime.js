@@ -1,5 +1,20 @@
 const mongoose = require('mongoose')
 
+const reviewSchema = new mongoose.Schema ({
+  title: {
+    type: String,
+    required: true
+  },
+  content: {
+    type: String,
+    required: true
+  },
+  owner:{
+    type: mongoose.Schema.Types.ObjectId,
+    reference: 'User'
+  }
+})
+
 const animeSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -20,7 +35,8 @@ const animeSchema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
-  }
+  },
+  reviews: [reviewSchema]
 }, {
   timestamps: true
 })
