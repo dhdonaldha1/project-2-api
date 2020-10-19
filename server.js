@@ -7,6 +7,7 @@ const cors = require('cors')
 const exampleRoutes = require('./app/routes/example_routes')
 const userRoutes = require('./app/routes/user_routes')
 const animeRoutes= require('./app/routes/anime_routes')
+const reviewRoutes = require('./app/routes/review_routes')
 // require middleware
 const errorHandler = require('./lib/error_handler')
 const replaceToken = require('./lib/replace_token')
@@ -64,6 +65,7 @@ app.use(requestLogger)
 app.use(exampleRoutes)
 app.use(userRoutes)
 app.use(animeRoutes)
+app.use(reviewRoutes)
 //get to respond to hi this is working
 app.get('/', (req, res) => res.send('This is working!!'))
 // register error handling middleware

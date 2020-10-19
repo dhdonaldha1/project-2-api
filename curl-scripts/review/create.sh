@@ -7,11 +7,13 @@ curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
-  --header "Authorization: Bearer ${TOKEN}" \
+  # --header "Authorization: Bearer ${TOKEN}" \
   --data '{
     "review": {
       "title": "'"${TITLE}"'",
-      "content": "'"${CONTENT}"'"
+      "content": "'"${CONTENT}"'",
+      "animeId": "'"${ANIME_ID}"'",
+      "owner": "'"${OWNER}"'"
     }
   }'
 
