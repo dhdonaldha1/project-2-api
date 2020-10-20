@@ -3,9 +3,9 @@ const router = express.Router()
 
 // require restaurant model
 const Anime = require('../models/anime')
-const handle404 = require('../lib/custom_errors')
+const handle404 = require('../../lib/custom_errors')
 
-router.post('/animes', (req, res, next) => {
+router.post('/animes/reviews', (req, res, next) => {
   // store the incoming request's review data
   const reviewData = req.body.review
 

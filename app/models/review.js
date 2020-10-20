@@ -12,8 +12,9 @@ const reviewSchema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
-},{
-  timestamps:true
+}}, {
+  timestamps: true
 })
 
 module.exports = reviewSchema
+// module.exports = mongoose.model('Review', reviewSchema)
