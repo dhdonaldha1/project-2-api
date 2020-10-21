@@ -23,6 +23,7 @@ router.post('/animes/reviews', (req, res, next) => {
       })
       // respond w/ 201 created and our restaurant which contains the new review
       .then(anime => res.status(201).json({ anime }))
+      .catch(next)
   })
 
 module.exports = router
